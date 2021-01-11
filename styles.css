@@ -1,0 +1,70 @@
+.canvas {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+h1{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+.main-block{
+  position: absolute;
+  left: 10%;
+  top:25px;
+  z-index: 1;
+  width: 80%;
+  display: grid;
+  grid-template-areas: 
+    "header header header"/*
+    "textdiv1 textdiv1 imgdiv1"
+    "imgdiv2 textdiv2 textdiv2"
+    "footer footer footer"*/;
+
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-gap: 2vw;
+}
+@media (max-width: 600px) {
+  .main-block{ 
+    grid-template-areas: 
+      "header "
+      /*"textdiv1" 
+      "imgdiv1"
+      "imgdiv2" 
+      "textdiv2"
+      "footer"*/;
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+    grid-gap: 2vw;
+  }
+  
+}
+header, footer, .innerdiv {
+  padding: 20px;
+  background: #F5E9D6;
+}
+#pageHeader {
+  grid-area: header;
+}
+#pageFooter {
+  grid-area: footer;
+}
+.pagetextdiv1 {
+  grid-area: textdiv1;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+}
+.pageimgdiv1 {
+  grid-area: imgdiv1;
+}
+.pagetextdiv2 {
+  grid-area: textdiv2;
+}
+.pageimgdiv2 {
+  grid-area: imgdiv2;
+}
+
